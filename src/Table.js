@@ -24,19 +24,7 @@ const TableBody = props => {
       <tr key={index}>
         <td>{row.name}</td>       
         <td>{row.job}</td>
-        <td>
-          {row.hobby.map((element, index) => {
-            return (
-              <table key={index}>
-                <tbody>
-                  <tr>
-                    <td>{element}</td>
-                  </tr>
-                </tbody>
-              </table>
-            );
-          })}
-        </td>
+        <td>{row.hobby}</td>
         <td>
           <button onClick={() => props.removeCharacter(index)}>Delete</button>
         </td>

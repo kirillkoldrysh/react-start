@@ -13,15 +13,6 @@ class Form extends Component {
     this.state = this.initialState;
   }
 
-  // form changing handler
-  handleChange = event => {
-    const { name, value } = event.target;
-
-    this.setState({
-      [name]: value
-    });
-  };
-
   render() {
     const { name, job, hobby } = this.state;
 
@@ -48,9 +39,28 @@ class Form extends Component {
           value={hobby}
           onChange={this.handleChange}
         />
+        <input type="button" value="Submit" onClick={this.submitForm} />
       </form>
     );
   }
+
+  // form changing handler
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
+  // this method calls handleSubmit function
+  // and return form to initial state
+  submitForm = () => {
+      this.props.handleSubmit(this.state);
+      this.setState(this.initialState);
+  }
+
+  
 }
 
 export default Form;

@@ -12,7 +12,7 @@ class App extends Component {
   // this.state.characters - to retrieve the state
   // this.setState() - to update
   state = {
-    characters: [],
+    characters: []
   };
   // function for remove character from state.characters
   // you must use setState to update array
@@ -25,6 +25,11 @@ class App extends Component {
         return i !== index;
       })
     });
+  };
+
+  // submit data handler
+  handleSubmit = character => {
+    this.setState({ characters: [...this.state.characters, character] });
   };
 
   render() {
@@ -40,7 +45,7 @@ class App extends Component {
           characterData={characters}
           removeCharacter={this.removeCharacter}
         />
-        <Form />
+        <Form handleSubmit={this.handleSubmit} />
       </div>
     );
 
