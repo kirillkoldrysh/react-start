@@ -3,6 +3,10 @@
 import React, { Component } from "react";
 import Table from "./Table";
 
+/**
+ * Main application class
+ * Class component must have a method render() that return just one component
+ */
 class App extends Component {
   render() {
     const name = "Jack";
@@ -13,6 +17,8 @@ class App extends Component {
         <Table />
       </div>
     );
+
+    // this variable contains all elements
     const container = (
       <div>
         {heading}
@@ -20,6 +26,7 @@ class App extends Component {
         {table}
       </div>
     );
+
     return container;
   }
 }
