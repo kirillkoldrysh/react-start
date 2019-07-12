@@ -12,38 +12,50 @@ class App extends Component {
     const name = "Jack";
     const heading = <h1 className="site-heading">Hello, React World!</h1>;
     const helloName = <h3 className="other-class">Hello, {name}</h3>;
-    
-    const characters = [
-      {
-        name: 'Bob',
-        job: 'Musiciant',
-        hobby: ['Tennis', 'Girls']
-      },
-      {
-        name: 'Arthur',
-        job: 'King',
-        hobby: ['Volleyball']
-      },
-      {
-        name: 'Sam',
-        job: 'Serious',
-        hobby: ['Videogames', 'Cooking', 'Boxing']
-      },
-      {
-        name: 'Adele',
-        job: 'Singer',
-        hobby: ['Photography', 'Learning']
-      },
-      {
-        name: 'Phill',
-        job: 'Dude',
-        hobby: ['Movies', 'Good books']
-      },
-    ];
-    
+
+    // State using for any data that should be saved and modified
+    // without necessarily being added to a DB
+    // this.state.characters - to retrieve the state
+    // this.setState() - to update
+    this.state = {
+      characters: [
+        {
+          name: "Bob",
+          job: "Musiciant",
+          hobby: ["Tennis", "Girls"]
+        },
+        {
+          name: "Arthur",
+          job: "King",
+          hobby: ["Volleyball"]
+        },
+        {
+          name: "Sam",
+          job: "Serious",
+          hobby: ["Videogames", "Cooking", "Boxing"]
+        },
+        {
+          name: "Adele",
+          job: "Singer",
+          hobby: ["Photography", "Learning"]
+        },
+        {
+          name: "Phill",
+          job: "Dude",
+          hobby: ["Movies", "Good books"]
+        }
+      ],
+    }
+
+    // passes to table like a prop
+    const characters = this.state.characters;
+
     const table = (
       <div className="table-container">
-        <Table characterData={characters}/>
+        <Table
+          characterData={characters}
+          removeCharacter={this.removeCharacter}
+        />
       </div>
     );
 
@@ -58,6 +70,18 @@ class App extends Component {
 
     return container;
   }
+
+  // function for remove character from state.characters
+  // you must use setState to update array
+  removeCharacter = index => {
+    const { characters } = this.state;
+
+    this.setState({
+      characters: characters.filter((character, i) => {
+        return i !== index;
+      })
+    });
+  };
 }
 
 export default App;
