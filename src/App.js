@@ -16,23 +16,28 @@ class App extends Component {
     const characters = [
       {
         name: 'Bob',
-        job: 'Musiciant'
+        job: 'Musiciant',
+        hobby: ['Tennis', 'Girls']
       },
       {
         name: 'Arthur',
-        job: 'King'
+        job: 'King',
+        hobby: ['Volleyball']
       },
       {
         name: 'Sam',
-        job: 'Serious'
+        job: 'Serious',
+        hobby: ['Videogames', 'Cooking', 'Boxing']
       },
       {
         name: 'Adele',
-        job: 'Singer'
+        job: 'Singer',
+        hobby: ['Photography', 'Learning']
       },
       {
         name: 'Phill',
-        job: 'Dude'
+        job: 'Dude',
+        hobby: ['Movies', 'Good books']
       },
     ];
     

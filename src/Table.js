@@ -11,6 +11,7 @@ const TableHeader = () => {
       <tr>
         <th>Name</th>
         <th>Job</th>
+        <th>Hobby</th>
       </tr>
     </thead>
   );
@@ -24,6 +25,19 @@ const TableBody = props => {
       <tr key={index}>
         <td>{row.name}</td>
         <td>{row.job}</td>
+        <td>
+          {row.hobby.map((element, index) => {
+            return (
+              <table key={index}>
+                <tbody>
+                  <tr>
+                    <td>{element}</td>
+                  </tr>
+                </tbody>
+              </table>
+            );
+          })}
+        </td>
       </tr>
     );
   });
