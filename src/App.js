@@ -47,6 +47,7 @@ class App extends Component {
       ],
     }
 
+    // passes to table like a prop
     const characters = this.state.characters;
 
     const table = (

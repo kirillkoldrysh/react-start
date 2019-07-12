@@ -10,6 +10,7 @@ const TableHeader = () => {
     <thead>
       <tr>
         <th>Name</th>
+        <th>Remove</th>
         <th>Job</th>
         <th>Hobby</th>
       </tr>
@@ -24,6 +25,9 @@ const TableBody = props => {
     return (
       <tr key={index}>
         <td>{row.name}</td>
+        <td>
+          <button onClick={() => props.removeCharacter(index)}>Delete</button>
+        </td>
         <td>{row.job}</td>
         <td>
           {row.hobby.map((element, index) => {
