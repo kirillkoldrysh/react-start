@@ -12,9 +12,33 @@ class App extends Component {
     const name = "Jack";
     const heading = <h1 className="site-heading">Hello, React World!</h1>;
     const helloName = <h3 className="other-class">Hello, {name}</h3>;
+    
+    const characters = [
+      {
+        name: 'Bob',
+        job: 'Musiciant'
+      },
+      {
+        name: 'Arthur',
+        job: 'King'
+      },
+      {
+        name: 'Sam',
+        job: 'Serious'
+      },
+      {
+        name: 'Adele',
+        job: 'Singer'
+      },
+      {
+        name: 'Phill',
+        job: 'Dude'
+      },
+    ];
+    
     const table = (
       <div className="table-container">
-        <Table />
+        <Table characterData={characters}/>
       </div>
     );
 
