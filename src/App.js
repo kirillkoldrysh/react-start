@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Table from "./Table";
+import Form from "./Form";
 
 /**
  * Main application class
@@ -39,6 +40,7 @@ class App extends Component {
           characterData={characters}
           removeCharacter={this.removeCharacter}
         />
+        <Form />
       </div>
     );
 

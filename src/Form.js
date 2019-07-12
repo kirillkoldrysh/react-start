@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class Form extends Component {
-  construct(proprs) {
+  constructor(props) {
     super(props);
 
     this.initialState = {
@@ -23,11 +23,11 @@ class Form extends Component {
   };
 
   render() {
-    const { name, job } = this.state;
+    const { name, job, hobby } = this.state;
 
     return (
       <form>
-          <label>Name</label>
+        <label>Name</label>
         <input
           type="text"
           name="name"
@@ -52,3 +52,5 @@ class Form extends Component {
     );
   }
 }
+
+export default Form;
