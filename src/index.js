@@ -6,10 +6,9 @@ import "./index.css";
 
 class App extends Component {
   render() {
+      const heading = <h1 className="site-heading">Hello, React World!</h1>
     return (
-      <div className="App">
-        <h1>Hello, React World!</h1>
-      </div>
+      heading
     );
   }
 }
