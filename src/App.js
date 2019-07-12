@@ -1,5 +1,3 @@
-"use strict";
-
 import React, { Component } from "react";
 import Table from "./Table";
 
@@ -13,33 +11,7 @@ class App extends Component {
   // this.state.characters - to retrieve the state
   // this.setState() - to update
   state = {
-    characters: [
-      {
-        name: "Bob",
-        job: "Musiciant",
-        hobby: ["Tennis", "Girls"]
-      },
-      {
-        name: "Arthur",
-        job: "King",
-        hobby: ["Volleyball"]
-      },
-      {
-        name: "Sam",
-        job: "Serious",
-        hobby: ["Videogames", "Cooking", "Boxing"]
-      },
-      {
-        name: "Adele",
-        job: "Singer",
-        hobby: ["Photography", "Learning"]
-      },
-      {
-        name: "Phill",
-        job: "Dude",
-        hobby: ["Movies", "Good books"]
-      }
-    ]
+    characters: [],
   };
   // function for remove character from state.characters
   // you must use setState to update array
