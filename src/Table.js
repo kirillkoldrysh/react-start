@@ -10,9 +10,9 @@ const TableHeader = () => {
     <thead>
       <tr>
         <th>Name</th>
-        <th>Remove</th>
         <th>Job</th>
         <th>Hobby</th>
+        <th>Remove</th>
       </tr>
     </thead>
   );
@@ -24,10 +24,7 @@ const TableBody = props => {
   const rows = props.characterData.map((row, index) => {
     return (
       <tr key={index}>
-        <td>{row.name}</td>
-        <td>
-          <button onClick={() => props.removeCharacter(index)}>Delete</button>
-        </td>
+        <td>{row.name}</td>       
         <td>{row.job}</td>
         <td>
           {row.hobby.map((element, index) => {
@@ -42,6 +39,9 @@ const TableBody = props => {
             );
           })}
         </td>
+        <td>
+          <button onClick={() => props.removeCharacter(index)}>Delete</button>
+        </td>
       </tr>
     );
   });
@@ -54,11 +54,11 @@ class Table extends Component {
   render() {
     // props is a good way to pass data to React components
     // but they are read-only
-    const { characterData } = this.props;
+    const { characterData, removeCharacter } = this.props;
     return (
       <table>
         <TableHeader />
-        <TableBody characterData={characterData} />
+        <TableBody characterData={characterData} removeCharacter={removeCharacter} />
       </table>
     );
   }
